@@ -26,7 +26,7 @@ class MainUtils:
         
     def read_schema_config_file(self) -> dict:
         try:
-            schema_config = self.read_yaml_file(os.path.join("config", "schema.yaml"))
+            schema_config = self.read_yaml_file(os.path.join("config", "training_schema.yaml"))
 
             return schema_config
 
