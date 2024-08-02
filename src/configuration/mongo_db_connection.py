@@ -9,6 +9,7 @@ from src.exception import CustomException
 
 ca = certifi.where()
 
+
 class MongoDBClient:
     client = None
 

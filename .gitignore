@@ -1,3 +1,5 @@
 env
-.env
-C:\Users\123sa\Desktop\Live-class project\phishing-classifier\.env
+artifacts
+logs
+.pyc
+pyc

@@ -12,6 +12,7 @@ from src.constant import *
 from src.exception import CustomException
 from src.logger import logging
 
+
 class MainUtils:
     def __init__(self) -> None:
         pass
@@ -23,22 +24,23 @@ class MainUtils:
 
         except Exception as e:
             raise CustomException(e, sys) from e
-        
+
     def read_schema_config_file(self) -> dict:
         try:
-            schema_config = self.read_yaml_file(os.path.join("config", "training_schema.yaml"))
+            schema_config = self.read_yaml_file(os.path.join("config", "schema.yaml"))
 
             return schema_config
 
         except Exception as e:
             raise CustomException(e, sys) from e
-        
+
+    
+
     @staticmethod
     def save_object(file_path: str, obj: object) -> None:
         logging.info("Entered the save_object method of MainUtils class")
 
         try:
-            #writing trained model in binary and dumping in pickle form
             with open(file_path, "wb") as file_obj:
                 pickle.dump(obj, file_obj)
 
@@ -46,7 +48,9 @@ class MainUtils:
 
         except Exception as e:
             raise CustomException(e, sys) from e
-        
+
+    
+
     @staticmethod
     def load_object(file_path: str) -> object:
         logging.info("Entered the load_object method of MainUtils class")
@@ -71,7 +75,7 @@ class MainUtils:
 
         except Exception as e:
             raise CustomException(e, sys)
-    
+
     @staticmethod
     def download_model(bucket_name, bucket_file_name, dest_file_name):
         try:
@@ -83,7 +87,7 @@ class MainUtils:
 
         except Exception as e:
             raise CustomException(e, sys)
-        
+
     @staticmethod
     def remove_unwanted_spaces(data: pd.DataFrame) -> pd.DataFrame:
         """
@@ -106,7 +110,7 @@ class MainUtils:
             return df_without_spaces
         except Exception as e:
             raise CustomException(e, sys)
-        
+
     @staticmethod
     def identify_feature_types(dataframe: pd.DataFrame):
         data_types = dataframe.dtypes
@@ -130,3 +134,5 @@ class MainUtils:
                 pass
 
         return categorical_features, continuous_features, discrete_features
+        
+    
