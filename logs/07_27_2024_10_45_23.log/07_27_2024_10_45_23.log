@@ -1,0 +1,39 @@
+[ 2024-07-27 10:45:28,167 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2024-07-27 10:45:28,199 ] 97 werkzeug - INFO -  * Debugger PIN: 731-781-131
+[ 2024-07-27 10:45:45,061 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Jul/2024 10:45:45] "GET / HTTP/1.1" 200 -
+[ 2024-07-27 10:46:02,526 ] 67 root - INFO - Entered initiate_data_ingestion method of Data_Ingestion class
+[ 2024-07-27 10:46:02,527 ] 37 root - INFO - Exporting data from mongodb
+[ 2024-07-27 10:46:02,530 ] 44 root - INFO - Saving exported data into feature store file path: artifacts\07_27_2024_10_45_25\data_ingestion
+[ 2024-07-27 10:46:06,522 ] 46 root - INFO - Shape of Phishing_Legitimate_full: (10000, 50)
+[ 2024-07-27 10:46:11,087 ] 46 root - INFO - Shape of phising_08012020_120000: (11055, 31)
+[ 2024-07-27 10:46:11,200 ] 72 root - INFO - Got the data from mongodb
+[ 2024-07-27 10:46:11,201 ] 74 root - INFO - Exited initiate_data_ingestion method of Data_Ingestion class
+[ 2024-07-27 10:46:11,201 ] 250 root - INFO - Entered initiate_data_validation method of Data_Validation class
+[ 2024-07-27 10:46:11,201 ] 253 root - INFO - Initiated data validation for the dataset
+[ 2024-07-27 10:46:11,449 ] 75 root - INFO - Entered initiate_data_transformation method of Data_Transformation class
+[ 2024-07-27 10:46:11,497 ] 104 root - INFO - Unwanted spaces removal Successful.Exited the remove_unwanted_spaces method of the Preprocessor class
+[ 2024-07-27 10:46:11,564 ] 38 root - INFO - Entered the save_object method of MainUtils class
+[ 2024-07-27 10:46:11,567 ] 45 root - INFO - Exited the save_object method of MainUtils class
+[ 2024-07-27 10:46:11,569 ] 167 root - INFO - Splitting training and testing input and target feature
+[ 2024-07-27 10:46:11,570 ] 169 root - INFO - Extracting model config file path
+[ 2024-07-27 10:46:11,570 ] 52 root - INFO - Entered the load_object method of MainUtils class
+[ 2024-07-27 10:46:11,579 ] 58 root - INFO - Exited the load_object method of MainUtils class
+[ 2024-07-27 10:46:11,579 ] 173 root - INFO - Extracting model config file path
+[ 2024-07-27 10:47:47,195 ] 208 root - INFO - Best found model on both training and testing dataset
+[ 2024-07-27 10:47:47,199 ] 215 root - INFO - Saving model at path: artifacts\07_27_2024_10_45_25\model_trainer\trained_model\model.pkl
+[ 2024-07-27 10:47:47,201 ] 38 root - INFO - Entered the save_object method of MainUtils class
+[ 2024-07-27 10:47:47,212 ] 45 root - INFO - Exited the save_object method of MainUtils class
+[ 2024-07-27 10:47:47,699 ] 1254 botocore.credentials - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+[ 2024-07-27 10:47:54,440 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Jul/2024 10:47:54] "GET /train HTTP/1.1" 200 -
+[ 2024-07-27 10:47:55,090 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Jul/2024 10:47:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[ 2024-07-27 10:50:26,262 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Jul/2024 10:50:26] "GET /predict HTTP/1.1" 200 -
+[ 2024-07-27 10:50:26,308 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Jul/2024 10:50:26] "GET /static/css/style.css HTTP/1.1" 200 -
+[ 2024-07-27 10:50:26,381 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Jul/2024 10:50:26] "[33mGET /script.js HTTP/1.1[0m" 404 -
+[ 2024-07-27 10:51:01,900 ] 52 root - INFO - Entered the load_object method of MainUtils class
+[ 2024-07-27 10:51:01,949 ] 58 root - INFO - Exited the load_object method of MainUtils class
+[ 2024-07-27 10:51:01,949 ] 35 root - INFO - Entered predict method of srcTruckModel class
+[ 2024-07-27 10:51:01,949 ] 38 root - INFO - Using the trained model to get predictions
+[ 2024-07-27 10:51:01,973 ] 42 root - INFO - Used the trained model to get predictions
+[ 2024-07-27 10:51:02,147 ] 104 root - INFO - predictions completed. 
+[ 2024-07-27 10:51:02,148 ] 35 root - INFO - prediction completed. Downloading prediction file.
+[ 2024-07-27 10:51:02,157 ] 97 werkzeug - INFO - 127.0.0.1 - - [27/Jul/2024 10:51:02] "POST /predict HTTP/1.1" 200 -

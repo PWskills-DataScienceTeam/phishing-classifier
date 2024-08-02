@@ -17,12 +17,14 @@ from src.logger import logging
 from src.utils.main_utils import MainUtils
 from dataclasses import dataclass
 
+
 @dataclass
 class DataTransformationConfig:
     data_transformation_dir = os.path.join(artifact_folder, 'data_transformation')
     transformed_train_file_path = os.path.join(data_transformation_dir, 'train.npy')
     transformed_test_file_path = os.path.join(data_transformation_dir, 'test.npy')
     transformed_object_file_path = os.path.join(data_transformation_dir, 'preprocessing.pkl')
+
 
 class DataTransformation:
     def __init__(self,
@@ -59,7 +61,9 @@ class DataTransformation:
             return merged_data
         except Exception as e:
             raise CustomException(e, sys)
-        
+
+    
+
     def initiate_data_transformation(self):
         """
             Method Name :   initiate_data_transformation

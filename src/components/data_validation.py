@@ -17,12 +17,14 @@ LENGTH_OF_DATE_STAMP_IN_FILE = 8
 LENGTH_OF_TIME_STAMP_IN_FILE = 6
 NUMBER_OF_COLUMNS = 11
 
+
 @dataclass
 class DataValidationConfig:
     data_validation_dir: str = os.path.join(artifact_folder, 'data_validation')
     valid_data_dir: str = os.path.join(data_validation_dir, 'validated')
     invalid_data_dir: str = os.path.join(data_validation_dir, 'invalid')
     schema_config_file_path: str = os.path.join('config', 'training_schema.json')
+
 
 class DataValidation:
     def __init__(self,
@@ -58,7 +60,7 @@ class DataValidation:
 
         except Exception as e:
             raise CustomException(e, sys)
-    
+
     def validate_file_name(self,
                            file_path: str,
                            length_of_date_stamp: int,
@@ -90,7 +92,7 @@ class DataValidation:
 
         except Exception as e:
             raise CustomException(e, sys)
-        
+
     def validate_no_of_columns(self, file_path: str,
                                schema_no_of_columns: int) -> bool:
         """
@@ -112,7 +114,7 @@ class DataValidation:
 
         except Exception as e:
             raise CustomException(e, sys)
-        
+
     def validate_missing_values_in_whole_column(self, file_path: str) -> bool:
         """
             Method Name :   validate_missing_values_in_whole_column
@@ -144,7 +146,7 @@ class DataValidation:
 
         except Exception as e:
             raise CustomException(e, sys)
-        
+
     def get_raw_batch_files_paths(self) -> List:
         """
             Method Name :   get_raw_batch_files_paths
@@ -166,7 +168,7 @@ class DataValidation:
 
         except Exception as e:
             raise CustomException(e, sys)
-        
+
     def move_raw_files_to_validation_dir(self, src_path: str, dest_path: str):
 
         """
@@ -187,7 +189,7 @@ class DataValidation:
                 shutil.move(src_path, dest_path)
         except Exception as e:
             raise CustomException(e, sys)
-        
+
     def validate_raw_files(self) -> bool:
         """
             Method Name :   validate_raw_files
@@ -258,6 +260,9 @@ class DataValidation:
                 return valid_data_dir
             else:
                 raise Exception("No data could be validated. Pipeline stopped.")
+
+
+
 
         except Exception as e:
             raise CustomException(e, sys) from e

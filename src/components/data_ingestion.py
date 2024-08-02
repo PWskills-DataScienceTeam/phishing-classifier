@@ -8,13 +8,15 @@ from src.constant import *
 from src.exception import CustomException
 from src.logger import logging
 
-from src.data_access.phishing_data import PhisingData
+from src.data_access.phising_data import PhisingData
 from src.utils.main_utils import MainUtils
 from dataclasses import dataclass
+
 
 @dataclass
 class DataIngestionConfig:
     data_ingestion_dir: str = os.path.join(artifact_folder, "data_ingestion")
+
 
 class DataIngestion:
     def __init__(self):
@@ -52,7 +54,7 @@ class DataIngestion:
 
         except Exception as e:
             raise CustomException(e, sys)
-        
+
     def initiate_data_ingestion(self) -> Path:
         """
             Method Name :   initiate_data_ingestion
@@ -79,7 +81,3 @@ class DataIngestion:
 
         except Exception as e:
             raise CustomException(e, sys) from e
-
-
-
-
